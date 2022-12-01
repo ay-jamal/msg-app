@@ -1,0 +1,25 @@
+<div class="login-container">
+  <h1>Login</h1>
+  <form [formGroup]="loginForm">
+    <div class="inputs">
+      <input type="text" placeholder="Eamil Adress" formControlName="email" />
+      <span *ngIf="email?.invalid && email?.touched"
+        >please enter a valid Email</span
+      >
+      <input
+        type="password"
+        placeholder="password"
+        formControlName="password"
+      />
+      <span *ngIf="password?.invalid && password?.touched"
+        >please enter a valid password</span
+      >
+    </div>
+    <button type="submit" (click)="login()">Login</button>
+    <div class="reg">
+      <p>Do not have an acount? <a routerLink="../sign-up">Register</a></p>
+    </div>
+  </form>
+</div>
+
+<router-outlet></router-outlet>

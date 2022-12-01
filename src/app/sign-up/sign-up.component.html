@@ -1,0 +1,25 @@
+<div class="login-container">
+  <h1>Sign Up</h1>
+  <form [formGroup]="SignIpForm">
+    <div class="inputs">
+      <input type="text" placeholder="Eamil Adress" formControlName="email" />
+      <span *ngIf="email?.invalid && email?.touched"
+        >please enter a valid Email</span
+      >
+      <input
+        type="password"
+        placeholder="password"
+        formControlName="password"
+      />
+      <span *ngIf="password?.invalid && password?.touched"
+        >please enter a valid password</span
+      >
+    </div>
+    <button type="submit" (click)="onSubmit()">Sign Up</button>
+    <div class="reg">
+      <p>Allready have an acount? <a routerLink="../login">Login</a></p>
+    </div>
+  </form>
+</div>
+
+<router-outlet></router-outlet>
